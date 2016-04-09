@@ -1,0 +1,142 @@
+$border_weight: 3px;
+$border_color: #111;
+$col_default_width: 30%;
+$title_col_width: 35%;
+$plan_date_col_width: 25%;
+$finish_col_width: 20%;
+$description_col_height: 100px;
+$table_header_color: #ccc;
+
+.simple_schedule_section {
+  width: 100%;
+
+  h1 {
+    text-align: center;
+  }
+
+  .center_block {
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .new-section {
+    margin-top: 20px;
+  }
+
+  .right-align-paragrah {
+    text-align: right;
+  }
+
+  .center-align-paragrah {
+    text-align: center;
+  }
+
+  .with-float:after {
+    clear: both;
+  }
+
+  table {
+    border-collapse: collapse;
+    max-width: 900px;
+    width: 100%;
+
+    td, th {
+      border: $border_weight solid $border_color;
+      width: $col_default_width;
+      min-width: 40px;
+    }
+
+    th {
+      background: $table_header_color;
+    }
+
+    .title-col {
+      width: $title_col_width;
+    }
+
+    .plan-date-col {
+      width: $plan_date_col_width;
+    }
+
+    .finish-col {
+      width: $finish_col_width;
+    }
+
+    .finished {
+      @extend .finish-col;
+    }
+
+    .unfinished {
+      @extend .finish-col;
+      color: red;
+    }
+  }
+
+  .description-table {
+    width: 100%;
+    th {
+      width: 10%;
+    }
+
+    .description-col {
+      height: $description_col_height;
+    }
+  }
+
+  .simple-schedule-default-form {
+    text-align: center;
+
+    form {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    td {
+      border: none;
+      padding: 10px;
+    }
+
+    input[type="text"] {
+      width: 70%;
+    }
+
+    textarea {
+      width: 70%;
+      height: 80px;
+    }
+
+    input[type="submit"] {
+      display: table;
+      margin: 0 auto;
+    }
+  }
+  .simple_form.new_schedule,
+  .simple_form.edit_schedule {
+    @extend .simple-schedule-default-form
+  }
+
+  .simple_form.edit_schedule {
+    .schedule_finished {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .left-side {
+    float: left;
+  }
+
+  .right-side {
+    float: right;
+  }
+}

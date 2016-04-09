@@ -1,0 +1,12 @@
+en:
+  schedules:
+    index:
+      header: "This week's schedules"
+      title: "Title"
+      schedule_date: "Planning date"
+      description: "Description"
+      finished: "Finished"
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      new_schedule: "Create New Schedule"

@@ -1,0 +1,20 @@
+.simple_schedule_section
+  .center_block
+    h1 = t '.header'
+    p.right-align-paragrah
+      = link_to t('.new_schedule'), new_schedule_path
+
+    - date = weeks_term_of @weeks.to_i
+    p.center-align-paragrah
+      = format t('.week_term'), l(date[:start_date], format: :long), l(date[:end_date] - 1.days, format: :long)
+
+    = render partial: 'schedule_table', locals: { schedules: @schedules }
+
+    p.center-align-paragrah.with-float
+      = link_to '前の週の予定表示', schedules_path(weeks: @weeks.to_i - 1), class: 'left-side'
+      = link_to '今週の予定表示', schedules_path(weeks: 0)
+      = link_to '次の週の予定表示', schedules_path(weeks: @weeks.to_i + 1), class: 'right-side'
+  .new-section
+    .center_block
+      h1 未完了スケジュール
+      = render partial: 'schedule_table', locals: { schedules: @unfinished_schedules }

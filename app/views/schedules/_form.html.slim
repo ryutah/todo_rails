@@ -1,0 +1,13 @@
+.simple_schedule_section
+  .center_block
+    = simple_form_for(schedule) do |f|
+      = f.error_notification
+
+      table
+        .form-inputs
+          = f.input :title, wrapper: :table
+          = f.input :schedule_date, wrapper: :table
+          = f.input :description, wrapper: :table
+
+      .form-actions
+        = f.button :submit

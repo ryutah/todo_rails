@@ -1,0 +1,10 @@
+ja:
+  activerecord: &activerecord
+    models:
+      schedule: "スケジュール"
+    attributes:
+      schedule:
+        title: "タイトル"
+        description: "詳細"
+        schedule_date: "予定日"
+        finished: "完了"

@@ -1,0 +1,30 @@
+.simple_schedule_section
+  .center_block
+    h1 = format t('.header'), @schedule.title
+    /p#notice = notice
+
+    table.description-table
+      tr
+        th
+          strong = t '.schedule_date'
+        td = l @schedule.schedule_date, format: :long
+      tr
+        th.description-col
+          strong = t '.description'
+        td = @schedule.description
+      tr
+        th
+          strong = t '.finish_status'
+          - finish_status = @schedule.finished? ? 'finished' : 'unfinished'
+        td[class="#{finish_status}"] =  t(".#{finish_status}")
+
+    p.center-align-paragrah
+      - unless @schedule.finished?
+        td = link_to t('schedules.index.to_finish'), schedule_path(@schedule, schedule: { finished: true }), method: :put
+      - else
+        td = link_to t('schedules.index.to_unfinish'), schedule_path(@schedule, schedule: { finished: false }), method: :put
+
+    p.right-align-paragrah
+      = link_to t('.edit'), edit_schedule_path(@schedule)
+      '|
+      = link_to t('.back'), schedules_path
