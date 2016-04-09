@@ -2,10 +2,8 @@
 # 半年に１回は内容の更新などを考えること
 source 'https://rubygems.org'
 
-
 group :default do
   gem 'rails', '4.2.6'
-  gem 'sqlite3'
 
   # railsでsassを使用できるようにする
   # 参考:https://github.com/rails/sass-rails
@@ -75,6 +73,7 @@ group :default do
 end
 
 group :development, :test do
+  gem 'sqlite3'
 end
 
 group :development do
@@ -151,6 +150,6 @@ end
 
 group :production do
   # Herokuにデプロイするとき用
-  # gem 'pg'
-  # gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end
