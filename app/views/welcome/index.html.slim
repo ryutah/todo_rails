@@ -6,35 +6,38 @@ link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3
 script crossorigin="anonymous" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 
 .top-header
-  .container
+  .container-fluid
     .row
-      h1 スケジュールアプリ
-      h4 スケジュール登録のサンプルアプリケーション
-      h4 随時サンプル追加予定
+      .col-md-12
+        h1 スケジュールアプリ
+        h4 スケジュール登録のサンプルアプリケーション
+        h4 随時サンプル追加予定
 
-.container style="margin-bottom: 50px;"
+.container-fluid style="margin-bottom: 50px;"
   .row
-    h2.page-header サンプルページ一覧
+    .col-md-12
+      h2.page-header サンプルページ一覧
   .row
-    table.table.table-striped
-      thead
-        tr
-          th サンプル名
-          th 説明
-          th 最終更新日
-      tbody
-        tr
-          td = link_to 'シンプル', schedules_simples_path
-          td jsを一切使っていない、とてもシンプルな作り
-          td 2016年4月10日
-        tr
-          td レスポンシブデザイン
-          td モバイルファースト的なUI
-          td そのうち
-        tr
-          td シングルページ(SPA)
-          td AngularJSを使って１つのページのように動作させる。
-          td きっといつか
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th サンプル名
+            th 説明
+            th 最終更新日
+        tbody
+          tr
+            td = link_to 'シンプル', schedules_simples_path
+            td jsを一切使っていない、とてもシンプルな作り
+            td 2016/4/10
+          tr
+            td レスポンシブデザイン
+            td モバイルファースト的なUI
+            td そのうち
+          tr
+            td シングルページ(SPA)
+            td AngularJSを使って１つのページのように動作させる。
+            td きっといつか
 
-footer
+footer.container-fluid
   p trash!!
