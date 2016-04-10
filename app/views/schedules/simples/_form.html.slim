@@ -1,6 +1,6 @@
 .simple_schedule_section
   .center_block
-    = simple_form_for(schedule) do |f|
+    = simple_form_for schedule, url: form_url do |f|
       = f.error_notification
 
       table

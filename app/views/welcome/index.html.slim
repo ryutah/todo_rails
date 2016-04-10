@@ -1,2 +1,40 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+/! Latest compiled and minified CSS
+link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet" /
+/! Optional theme
+link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" rel="stylesheet" /
+/! Latest compiled and minified JavaScript
+script crossorigin="anonymous" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+
+.top-header
+  .container
+    .row
+      h1 スケジュール登録サンプルアプリケーション
+      h4 スケジュール登録のサンプルアプリケーション
+      h4 随時サンプル追加予定
+
+.container
+  .row
+    h2.page-header サンプルアプリケーション一覧
+  .row
+    table.table.table-striped
+      thead
+        tr
+          th サンプル名
+          th 説明
+          th 最終更新日
+      tbody
+        tr
+          td = link_to 'シンプル', schedules_simples_path
+          td jsを一切使っていない、とてもシンプルな作り
+          td 2016年4月10日
+        tr
+          td レスポンシブデザイン
+          td モバイルファースト的なUI
+          td そのうち
+        tr
+          td シングルページ(SPA)
+          td AngularJSを使って１つのページのように動作させる。
+          td きっといつか
+
+footer
+  p trash!!

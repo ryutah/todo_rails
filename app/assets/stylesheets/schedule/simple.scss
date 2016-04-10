@@ -101,8 +101,14 @@ $table_header_color: #ccc;
     }
 
     td {
-      border: none;
+      //border: none;
       padding: 10px;
+    }
+
+    td:first-child {
+      width: 16%;
+      background: $table_header_color;
+      font-weight: bold;
     }
 
     input[type="text"] {

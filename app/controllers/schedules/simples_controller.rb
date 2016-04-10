@@ -1,4 +1,4 @@
-class SchedulesController < ApplicationController
+class Schedules::SimplesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
   # GET /schedules
@@ -33,7 +33,7 @@ class SchedulesController < ApplicationController
 
     if @schedule.save
       flash[:notice] = 'スケジュールを登録しました'
-      redirect_to @schedule
+      redirect_to schedules_simple_path(@schedule)
     else
       render action: 'new'
     end
@@ -42,7 +42,11 @@ class SchedulesController < ApplicationController
   # PATCH/PUT /schedules/1
   # PATCH/PUT /schedules/1.json
   def update
-    redirect_path = request.referer
+    redirect_path = if request.referer.end_with? 'edit'
+                      schedules_simple_path @schedule.id
+                    else
+                      request.referer
+                    end
     if @schedule.update(schedule_params)
       flash[:notice] = 'スケジュールを更新しました'
       redirect_to redirect_path
@@ -55,7 +59,7 @@ class SchedulesController < ApplicationController
   # DELETE /schedules/1.json
   def destroy
     @schedule.destroy
-    redirect_to schedules_url
+    redirect_to schedules_simples_url
   end
 
   private

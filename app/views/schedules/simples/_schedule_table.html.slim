@@ -1,0 +1,23 @@
+table.index-table
+  thead
+    tr
+      th.title-col = t locals_index_string('title')
+      th.plan-date-col = t locals_index_string('schedule_date')
+      th.finish-col = t locals_index_string('finish_status')
+      th
+      th
+
+  tbody
+    - schedules.each do |schedule|
+      - finish_class = schedule.finished? ? 'finished' : 'unfinished'
+      tr
+        /td.title-col = link_to schedule.title, schedule
+        td.title-col = link_to schedule.title, schedules_simple_path(schedule)
+        td.plan-date-col = l schedule.schedule_date, format: :long
+        - finish_status = schedule.finished? ? 'finished' : 'unfinished'
+        td[class="#{finish_status}"] = t locals_index_string(finish_status)
+        - unless schedule.finished?
+          td = link_to t(locals_index_string 'to_finish'), schedules_simple_path(schedule, schedule: { finished: true }), method: :put
+        - else
+          td = link_to t(locals_index_string 'to_unfinish'), schedules_simple_path(schedule, schedule: { finished: false }), method: :put
+        td = link_to t(locals_index_string 'delete'), schedules_simple_path(schedule), data: { confirm: t(locals_index_string 'confirm_delete') }, method: :delete

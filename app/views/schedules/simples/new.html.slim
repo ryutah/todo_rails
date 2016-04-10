@@ -1,0 +1,8 @@
+.simple_schedule_section
+  .center_block
+    h1 = t '.header'
+
+    == render partial: 'form', locals: { schedule: @schedule , form_url: schedules_simples_path(@schedule), render_finish: false }
+
+    p.right-align-paragrah
+      = link_to t('.back'), schedules_simples_path

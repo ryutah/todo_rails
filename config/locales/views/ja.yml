@@ -11,25 +11,26 @@ ja:
       delete: "削除"
       show: "詳細表示"
       back: "戻る"
-
-    index:
-      <<: *schedule_default
-      header: "スケジュール一覧"
-      week_term: "%s 〜 %s"
-      confirm_delete: "スケジュールを削除します。よろしいですか?"
       to_finish: "完了にする"
       to_unfinish: "未完了にする"
-      new_schedule: "スケジュールの登録"
 
-    show:
-      <<: *schedule_default
-      header: "%sの詳細"
+    simples:
+      index:
+        <<: *schedule_default
+        header: "スケジュール一覧"
+        week_term: "%s 〜 %s"
+        confirm_delete: "スケジュールを削除します。よろしいですか?"
+        new_schedule: "スケジュールの登録"
 
-    new:
-      <<: *schedule_default
-      header: "スケジュール新規登録"
+      show:
+        <<: *schedule_default
+        header: "%sの詳細"
 
-    edit:
-      <<: *schedule_default
-      header: "%sの変更"
-      back_to_index: "一覧に戻る"
+      new:
+        <<: *schedule_default
+        header: "スケジュール新規登録"
+
+      edit:
+        <<: *schedule_default
+        header: "%sの変更"
+        back_to_index: "一覧に戻る"

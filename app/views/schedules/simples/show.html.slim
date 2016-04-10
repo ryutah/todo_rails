@@ -20,11 +20,11 @@
 
     p.center-align-paragrah
       - unless @schedule.finished?
-        td = link_to t('schedules.index.to_finish'), schedule_path(@schedule, schedule: { finished: true }), method: :put
+        td = link_to t('.to_finish'), schedules_simple_path(@schedule, schedule: { finished: true }), method: :put
       - else
-        td = link_to t('schedules.index.to_unfinish'), schedule_path(@schedule, schedule: { finished: false }), method: :put
+        td = link_to t('.to_unfinish'), schedules_simple_path(@schedule, schedule: { finished: false }), method: :put
 
     p.right-align-paragrah
-      = link_to t('.edit'), edit_schedule_path(@schedule)
+      = link_to t('.edit'), edit_schedules_simple_path(@schedule)
       '|
-      = link_to t('.back'), schedules_path
+      = link_to t('.back'), schedules_simples_path
